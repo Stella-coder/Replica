@@ -1,22 +1,19 @@
 import React from "react";
-import HeroFile from "./Hero/HeroFile";
-import Footer from "./Hero/Footer";
-import TextGradient from "./Gradient/TextGradient";
-import HomeScreen from "./Gradient/HomeScreen";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Display from "./foodApp/Display";
+import HeaderV from "./foodApp/HeaderV";
+import Input from "./foodApp/Input";
 
-export const App = () => {
+const app = () => {
   return (
-    // <div style={{
-    //   width:"100vw",
-    //   height:"100vh",
-    // }}>
-    //   <HeroFile/>
-    //   <Footer/>
-
-    // </div>
-    <div>
-      <HomeScreen />
-    </div>
+    <BrowserRouter>
+      <HeaderV />
+      <Switch>
+        <Route exact path="/" component={Display} />
+        <Route exact path="/input" component={Input} />
+      </Switch>
+    </BrowserRouter>
   );
 };
-export default App;
+
+export default app;
